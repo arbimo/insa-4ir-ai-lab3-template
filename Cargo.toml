@@ -1,0 +1,22 @@
+[package]
+name = "checkers"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+# eframe = { version = "*", features = [
+#     "default",
+#     "__screenshot", # __screenshot is so we can dump a screenshot using EFRAME_SCREENSHOT_TO
+# ] }
+# log = "0.4"
+# env_logger = "0.11"
+static_assertions = "1.1.0"
+arrayvec = "0.7.6"
+smallvec = { version = "1.14.0", features = ["union"] }
+itertools = "*"
+rand = "*"
+hashbrown = "*"
+
+[profile.release]
+debug = true
