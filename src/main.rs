@@ -11,7 +11,6 @@ pub mod board;
 pub mod engine;
 pub mod mcts;
 pub mod minimax;
-mod uce_mcts;
 
 /// Applies a number of randomly select moves and return the resulting board.
 ///
@@ -82,7 +81,6 @@ fn example_game() {
     let mut white_engine = MinimaxEngine::new(6);
     // let mut white_engine = MctsEngine::new(1.);
     let mut black_engine = MinimaxEngine::new(6);
-    let mut black_engine = uce_mcts::MinimaxEngine::new(8);
 
     let final_board = play_game(
         &board,
