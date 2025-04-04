@@ -30,15 +30,15 @@ pub type Count = u64;
 
 /// Node of the MCTS graph
 struct Node {
-    /// Board of the node
+    /// s: Board of the node
     board: Board,
-    /// Numer of times this node has been selected
+    /// N(s): Number of times this node has been selected
     count: Count,
     /// *All* valid actions available on the board, together with the number of times they have been selected (potentially 0)
     /// and the last known evaluation of the result board.
     /// The actions define the outgoing edges (the target nodes can be computed by applying the action on the board)
     out_edges: Vec<OutEdge>,
-    /// Evaluation given by the initial rollout on expansion
+    /// U(s): Evaluation given by the initial rollout on expansion
     initial_eval: f32,
     /// Q(s): complete evaluation of the node (to be updated after each playout)
     eval: f32,
@@ -67,7 +67,7 @@ impl Node {
 ///
 /// An `OutEdge` is attached to a node (source) and target can be computed by applying the action to the source.
 struct OutEdge {
-    // action of the edge
+    // a: action of the edge
     action: Action,
     // N(s,a): number of times this edge was selected
     visits: Count,
